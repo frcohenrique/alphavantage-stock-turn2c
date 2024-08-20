@@ -1,0 +1,16 @@
+<ng-container *ngIf="quoteDetail">
+
+  <div class="container">
+    <span>Mais informações de - {{quoteDetail.stock}}</span>
+    <img class="quotes-logo" [src]="quoteDetail.logo" alt="Logo"/>
+
+    <div class="about">
+      <span class="bordered-text">Sobre a Empresa</span>
+      <div class="info">
+        <span><span class="text-orange">Nome:</span> {{quoteDetail.name}}</span>
+        <span><span class="text-orange">Indústria:</span> {{quoteDetail.sector}}</span>
+        <span><span class="text-orange">Tipo:</span> {{quoteDetail.type}}</span>
+      </div>
+    </div>
+  </div>
+</ng-container>

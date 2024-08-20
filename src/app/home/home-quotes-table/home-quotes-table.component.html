@@ -1,0 +1,37 @@
+<ng-container *ngIf="quotesListData?.stocks?.length; else noData">
+  <div class="table-container">
+    <table>
+      <tbody>
+        <tr *ngFor="let list of quotesListData?.stocks;">
+          <td style="width: 15%; text-align: center;"><img class="quotes-logo" [src]="list.logo" alt="Logo" /></td>
+          <td>{{ list.stock }}</td>
+          <td>
+            <div class="info-container">
+              <span>Maior Preço</span>
+              {{ list.volume | currency }}
+            </div>
+          </td>
+          <td>
+            <div class="info-container">
+              <span>Menor Preço</span>
+              {{ list.change | currency }}
+            </div>
+          </td>
+          <td>
+            <div class="info-container">
+              <span>Prev. Fechar</span>
+              {{ list.close | currency }}
+            </div>
+          </td>
+          <td>
+            <button class="custom-btn" (click)="onDetailClick(list)">Detalhes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+
+<ng-template #noData>
+  <span>Nenhum dado foi encontrado.</span>
+</ng-template>

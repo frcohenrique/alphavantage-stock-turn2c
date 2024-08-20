@@ -1,0 +1,10 @@
+<div class="home-container">
+  <h3>Principais Ações</h3>
+  <div [ngStyle]="getContainerStyles()">
+    <app-home-quotes-table (dataQuoteEmit)="onEmitQuoteData($event)"></app-home-quotes-table>
+
+    <ng-container *ngIf="quoteDetail">
+      <app-home-quote-detail [quoteDetail]="quoteDetail"></app-home-quote-detail>
+    </ng-container>
+  </div>
+</div>
